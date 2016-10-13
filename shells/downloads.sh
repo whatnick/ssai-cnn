@@ -1,6 +1,7 @@
 #! /bin/bash
 
 wget \
+--continue \
 --recursive \
 --page-requisites \
 --html-extension \
