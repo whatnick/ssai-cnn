@@ -45,7 +45,14 @@ $ ./b2 -j32 install cxxflags="-I/home/ubuntu/anaconda3/include/python3.5m"
 ```
 $ git clone https://github.com/ndarray/Boost.NumPy.git
 $ cd Boost.NumPy && mkdir build && cd build
-$ cmake -DPYTHON_LIBRARY=$HOME/anaconda3/lib/libpython3.5m.so ../
+$ PYTHON_DIR=$HOME/anaconda3
+$cmake \
+-DPYTHON_LIBRARY=$PYTHON_DIR/lib/libpython3.5m.so \
+-DPYTHON_INCLUDE_DIR=$PYTHON_DIR/include/python3.5m \
+-DPYTHON_INCLUDE_DIR2=$PYTHON_DIR/include \
+-DBoost_INCLUDE_DIR=/usr/local/include \
+-Wno-dev \
+. && make
 $ make install
 ```
 
